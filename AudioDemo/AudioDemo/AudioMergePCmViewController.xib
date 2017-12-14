@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioMergePCmViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="3Gz-Ku-l1I">
+                    <rect key="frame" x="0.0" y="120" width="375" height="400"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbS-z7-Do5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <color key="backgroundColor" red="0.91764705879999997" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="eqU-fI-8l4"/>
+                            </constraints>
+                            <state key="normal" title="播放1音频"/>
+                            <connections>
+                                <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="iDh-bQ-Ibu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwY-wS-Y9o">
+                            <rect key="frame" x="0.0" y="120" width="375" height="40"/>
+                            <color key="backgroundColor" red="0.91764705879999997" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="b33-se-a3B"/>
+                            </constraints>
+                            <state key="normal" title="播放2音频"/>
+                            <connections>
+                                <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="pud-gS-Lbu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCT-cz-8Us">
+                            <rect key="frame" x="0.0" y="240" width="375" height="40"/>
+                            <color key="backgroundColor" red="0.91764705879999997" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="PTv-Md-8lg"/>
+                            </constraints>
+                            <state key="normal" title="合成"/>
+                            <connections>
+                                <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="jNn-gG-RmY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grw-xW-QnL">
+                            <rect key="frame" x="0.0" y="360" width="375" height="40"/>
+                            <color key="backgroundColor" red="0.91764705879999997" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="PMj-hw-UP9"/>
+                            </constraints>
+                            <state key="normal" title="播放合成音频"/>
+                            <connections>
+                                <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="PjR-Q3-NzT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="Fzo-zS-6Fv"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3Gz-Ku-l1I" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="4vd-Ro-1Qo"/>
+                <constraint firstItem="3Gz-Ku-l1I" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="91Z-Ht-hxT"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3Gz-Ku-l1I" secondAttribute="trailing" id="NIS-CM-mkk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
