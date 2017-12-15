@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70DB4A31FE2361900C7C758 /* LEDReplayKitRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DB4A21FE2361900C7C758 /* LEDReplayKitRecorder.m */; };
+		D70DB4A61FE2363D00C7C758 /* MCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DB4A51FE2363D00C7C758 /* MCAlertController.m */; };
 		D7A021E21FDE65010058F886 /* audio.wav in Resources */ = {isa = PBXBuildFile; fileRef = D7A021E11FDE65010058F886 /* audio.wav */; };
 		D7A021E51FDE66AF0058F886 /* abc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D7A021E41FDE66AF0058F886 /* abc.mp4 */; };
 		D7FBD5371FDAA58B009721D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBD5361FDAA58B009721D3 /* AppDelegate.m */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70DB4A11FE2361900C7C758 /* LEDReplayKitRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDReplayKitRecorder.h; sourceTree = "<group>"; };
+		D70DB4A21FE2361900C7C758 /* LEDReplayKitRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDReplayKitRecorder.m; sourceTree = "<group>"; };
+		D70DB4A41FE2363C00C7C758 /* MCAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAlertController.h; sourceTree = "<group>"; };
+		D70DB4A51FE2363D00C7C758 /* MCAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAlertController.m; sourceTree = "<group>"; };
 		D7A021E11FDE65010058F886 /* audio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audio.wav; sourceTree = "<group>"; };
 		D7A021E41FDE66AF0058F886 /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
 		D7FBD5321FDAA58B009721D3 /* AudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +102,10 @@
 				D7FBD5581FDAA7BD009721D3 /* LYPlayer.m */,
 				D7FBD54E1FDAA5D2009721D3 /* AudioMergePCmViewController.m */,
 				D7FBD54F1FDAA5D2009721D3 /* AudioMergePCmViewController.xib */,
+				D70DB4A11FE2361900C7C758 /* LEDReplayKitRecorder.h */,
+				D70DB4A21FE2361900C7C758 /* LEDReplayKitRecorder.m */,
+				D70DB4A41FE2363C00C7C758 /* MCAlertController.h */,
+				D70DB4A51FE2363D00C7C758 /* MCAlertController.m */,
 				D7FBD55A1FDAAA87009721D3 /* ExtAudioFileMixer.h */,
 				D7FBD55B1FDAAA87009721D3 /* ExtAudioFileMixer.m */,
 				D7FBD53B1FDAA58B009721D3 /* Main.storyboard */,
@@ -187,9 +197,11 @@
 			files = (
 				D7FBD53A1FDAA58B009721D3 /* ViewController.m in Sources */,
 				D7FBD5501FDAA5D2009721D3 /* AudioMergePCmViewController.m in Sources */,
+				D70DB4A61FE2363D00C7C758 /* MCAlertController.m in Sources */,
 				D7FBD5591FDAA7BD009721D3 /* LYPlayer.m in Sources */,
 				D7FBD5451FDAA58B009721D3 /* main.m in Sources */,
 				D7FBD55C1FDAAA87009721D3 /* ExtAudioFileMixer.m in Sources */,
+				D70DB4A31FE2361900C7C758 /* LEDReplayKitRecorder.m in Sources */,
 				D7FBD5371FDAA58B009721D3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

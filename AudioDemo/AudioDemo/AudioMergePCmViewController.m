@@ -10,9 +10,11 @@
 #import "LYPlayer.h"
 #import <UIKit/UIKit.h>
 #import "ExtAudioFileMixer.h"
+#import "LEDReplayKitRecorder.h"
 
 @interface AudioMergePCmViewController ()
 @property(nonatomic,strong)LYPlayer* player;
+@property(nonatomic,strong)LEDReplayKitRecorder* kitRecorder;
 - (IBAction)playBUttonCclick:(UIButton *)sender;
 @end
 
@@ -65,13 +67,20 @@
         
          [self.player playWithURl:[self getTestFullPath]];
     }else if (sender.tag == 2){
-        [ExtAudioFileMixer sourceURLs:@[[self getAbcFullPath],[self getTestFullPath]] videoUrl:[self getMovieFullPath] composeToURL:[self getComFullPath] completed:^(NSError *error) {
-            
-        }];
+//        [ExtAudioFileMixer sourceURLs:@[[self getAbcFullPath],[self getTestFullPath]] videoUrl:[self getMovieFullPath] composeToURL:[self getComFullPath] completed:^(NSError *error) {
+//
+//        }];
 //       ExtAudioFileMixer*audioMix = [[ExtAudioFileMixer alloc] init];
 //        [audioMix convertPcm2Wav:[[self getAbcFullPath] path] dst_file:[[self getWavComFullPath] path] channels:1 sample_rate:44100];
+        if (!_kitRecorder) {
+            _kitRecorder = [LEDReplayKitRecorder alloc];
+        }
+          [_kitRecorder StartRecoder];
     }else if (sender.tag == 3){
-         [self.player playWithURl:[self getComFullPath]];
+//         [self.player playWithURl:[self getComFullPath]];
+        [_kitRecorder stopDecoderWithBlock:^(BOOL success) {
+            
+        }];
     }
     
 }

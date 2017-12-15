@@ -51,7 +51,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="PTv-Md-8lg"/>
                             </constraints>
-                            <state key="normal" title="合成"/>
+                            <state key="normal" title="录制"/>
                             <connections>
                                 <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="jNn-gG-RmY"/>
                             </connections>
@@ -62,7 +62,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="PMj-hw-UP9"/>
                             </constraints>
-                            <state key="normal" title="播放合成音频"/>
+                            <state key="normal" title="录制结束"/>
                             <connections>
                                 <action selector="playBUttonCclick:" destination="-1" eventType="touchUpInside" id="PjR-Q3-NzT"/>
                             </connections>
