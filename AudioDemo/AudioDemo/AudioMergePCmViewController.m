@@ -11,10 +11,13 @@
 #import <UIKit/UIKit.h>
 #import "ExtAudioFileMixer.h"
 #import "LEDReplayKitRecorder.h"
-
+#import "RecordingCoordinator.h"
 @interface AudioMergePCmViewController ()
 @property(nonatomic,strong)LYPlayer* player;
 @property(nonatomic,strong)LEDReplayKitRecorder* kitRecorder;
+@property(nonatomic,strong)RecordingCoordinator* coordinator;
+@property (weak, nonatomic) IBOutlet UILabel *showLable;
+@property(nonatomic,assign)NSInteger TimeCOunt;
 - (IBAction)playBUttonCclick:(UIButton *)sender;
 @end
 
@@ -26,11 +29,24 @@
     }
     return _player;
 }
+-(RecordingCoordinator *)coordinator
+{
+    if (!_coordinator) {
+        _coordinator = [[RecordingCoordinator alloc]init];
+    }
+    return _coordinator;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self timeFlay];
 }
-
+-(void)timeFlay
+{
+    _TimeCOunt ++;
+    _showLable.text =@(_TimeCOunt).stringValue;
+    [self performSelector:@selector(timeFlay) withObject:self afterDelay:1];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,11 +54,11 @@
 
 -(NSURL*)getAbcFullPath
 {
-    return [[NSBundle mainBundle] URLForResource:@"audio" withExtension:@"wav"];
+    return [[NSBundle mainBundle] URLForResource:@"remoteaudioPath" withExtension:@"wav"];
 }
 -(NSURL*)getTestFullPath
 {
-    return [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp3"];
+    return [[NSBundle mainBundle] URLForResource:@"remoteaudioPath" withExtension:@"pcm"];
 }
 -(NSURL*)getMovieFullPath
 {
@@ -59,9 +75,8 @@
     return [NSURL fileURLWithPath:path];
 }
 - (IBAction)playBUttonCclick:(UIButton *)sender {
-    NSLog(@"NSURL = %@",[self getComFullPath]);
     if (sender.tag == 0) {
-        [self.player playWithURl:[self getAbcFullPath]];
+        [self.player playWithURl:[self getTestFullPath]];
     }else if (sender.tag == 1){
         [self.player stop];
         
@@ -75,12 +90,14 @@
         if (!_kitRecorder) {
             _kitRecorder = [LEDReplayKitRecorder alloc];
         }
-          [_kitRecorder StartRecoder];
+          [_kitRecorder StartRecoderWithSize:self.view.bounds.size];
+//        [self.coordinator startRecordingWithAudio:YES frontCameraPreview:NO];
     }else if (sender.tag == 3){
 //         [self.player playWithURl:[self getComFullPath]];
         [_kitRecorder stopDecoderWithBlock:^(BOOL success) {
-            
+
         }];
+//        [self.coordinator stopRecording];
     }
     
 }

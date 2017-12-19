@@ -20,6 +20,6 @@ typedef void(^StopDecoderComplete)(BOOL success);
 @property(nonatomic,weak)id<LEDReplayKitRecorderDelegate> delegate;
 @property(nonatomic,copy)StopDecoderComplete stopDecoderComplete;
 //开始录屏
-- (void)StartRecoder;
+- (void)StartRecoderWithSize:(CGSize)sizeScreen;
 - (void)stopDecoderWithBlock:(StopDecoderComplete)complete;
 @end

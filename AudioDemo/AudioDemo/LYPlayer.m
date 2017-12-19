@@ -142,7 +142,7 @@ static OSStatus PlayCallback(void *inRefCon,
     LYPlayer *player = (__bridge LYPlayer *)inRefCon;
     
     ioData->mBuffers[0].mDataByteSize = (UInt32)[player->inputSteam read:ioData->mBuffers[0].mData maxLength:(NSInteger)ioData->mBuffers[0].mDataByteSize];;
-    NSLog(@"out size: %d", ioData->mBuffers[0].mDataByteSize);
+//    NSLog(@"out size: %d", ioData->mBuffers[0].mDataByteSize);
     
     if (ioData->mBuffers[0].mDataByteSize <= 0) {
         dispatch_async(dispatch_get_main_queue(), ^{

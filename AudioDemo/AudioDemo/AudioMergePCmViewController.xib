@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioMergePCmViewController">
             <connections>
+                <outlet property="showLable" destination="640-fb-IkQ" id="w2Y-nc-Rol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,12 +73,21 @@
                         <constraint firstAttribute="height" constant="400" id="Fzo-zS-6Fv"/>
                     </constraints>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="640-fb-IkQ">
+                    <rect key="frame" x="166" y="585" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3Gz-Ku-l1I" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="4vd-Ro-1Qo"/>
                 <constraint firstItem="3Gz-Ku-l1I" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="91Z-Ht-hxT"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3Gz-Ku-l1I" secondAttribute="trailing" id="NIS-CM-mkk"/>
+                <constraint firstItem="640-fb-IkQ" firstAttribute="top" secondItem="3Gz-Ku-l1I" secondAttribute="bottom" constant="65" id="bLV-7b-bPp"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="640-fb-IkQ" secondAttribute="bottom" constant="61" id="sR1-8u-wXf"/>
+                <constraint firstItem="640-fb-IkQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w0u-1y-8Jy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
