@@ -375,22 +375,32 @@ reterr:
 //生成视频mp4.
 + (void)sourceURLs:(NSArray *) sourceURLs videoUrl:(NSURL*)videoUrl composeToURL:(NSURL *) toURL completed:(void (^)(NSError *error)) completed;
 {
- 
- __block NSError * error = nil;
+    
+    __block NSError * error = nil;
     AVURLAsset *videoAsset = [AVURLAsset assetWithURL:videoUrl];
     
     AVMutableComposition *compostion = [AVMutableComposition composition];
     AVMutableCompositionTrack *video = [compostion addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:0];
     [video insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:kCMTimeZero error:&error];
+    NSArray* audioArray = [videoAsset tracksWithMediaType:AVMediaTypeAudio];
+    NSLog(@"audoArray = %@",audioArray);
+    for (AVAssetTrack*audioTranck in audioArray) {
+     
+        AVMutableCompositionTrack *audieo_Video = [compostion addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:0];
+        [audieo_Video insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:audioTranck atTime:kCMTimeZero error:&error];
+    }
+   
     for (NSURL*audioUrl in sourceURLs) {
-        AVURLAsset *audioAsset = [AVURLAsset assetWithURL:audioUrl];
-        AVMutableCompositionTrack *audio = [compostion addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:0];
-        [audio insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:&error];
-        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:audioUrl.path])
+        {
+            AVURLAsset *audioAsset = [AVURLAsset assetWithURL:audioUrl];
+            AVMutableCompositionTrack *audio = [compostion addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:0];
+            [audio insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:&error];
+        }
     }
     
     AVAssetExportSession *session = [[AVAssetExportSession alloc]initWithAsset:compostion presetName:AVAssetExportPresetMediumQuality];
-
+    
     if ([[NSFileManager defaultManager] fileExistsAtPath:toURL.path])
     {
         [[NSFileManager defaultManager] removeItemAtPath:toURL.path error:nil];
@@ -408,7 +418,7 @@ reterr:
         else
         {
             NSLog(@"输出错误");
-             completed?completed(error):nil;
+            completed?completed(error):nil;
         }
     }];
     

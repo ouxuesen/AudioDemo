@@ -11,6 +11,9 @@
 		D70DB4A61FE2363D00C7C758 /* MCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DB4A51FE2363D00C7C758 /* MCAlertController.m */; };
 		D71FC7A21FE7967C006ADB6E /* RecordingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D71FC7A11FE7967C006ADB6E /* RecordingCoordinator.m */; };
 		D71FCA211FE918E2006ADB6E /* remoteaudioPath.wav in Resources */ = {isa = PBXBuildFile; fileRef = D71FCA201FE918E2006ADB6E /* remoteaudioPath.wav */; };
+		D71FCA231FE9223A006ADB6E /* vedioPath.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D71FCA221FE9223A006ADB6E /* vedioPath.mp4 */; };
+		D71FCB0D1FF0EF6B006ADB6E /* locationaudioPath.pcm in Resources */ = {isa = PBXBuildFile; fileRef = D71FCB0C1FF0EF6B006ADB6E /* locationaudioPath.pcm */; };
+		D71FCB0F1FF0EF70006ADB6E /* remoteaudioPath.pcm in Resources */ = {isa = PBXBuildFile; fileRef = D71FCB0E1FF0EF70006ADB6E /* remoteaudioPath.pcm */; };
 		D7A021E21FDE65010058F886 /* audio.wav in Resources */ = {isa = PBXBuildFile; fileRef = D7A021E11FDE65010058F886 /* audio.wav */; };
 		D7A021E51FDE66AF0058F886 /* abc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D7A021E41FDE66AF0058F886 /* abc.mp4 */; };
 		D7FBD5371FDAA58B009721D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FBD5361FDAA58B009721D3 /* AppDelegate.m */; };
@@ -37,6 +40,9 @@
 		D71FC7A01FE7967B006ADB6E /* RecordingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingCoordinator.h; sourceTree = "<group>"; };
 		D71FC7A11FE7967C006ADB6E /* RecordingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingCoordinator.m; sourceTree = "<group>"; };
 		D71FCA201FE918E2006ADB6E /* remoteaudioPath.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = remoteaudioPath.wav; sourceTree = "<group>"; };
+		D71FCA221FE9223A006ADB6E /* vedioPath.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vedioPath.mp4; sourceTree = "<group>"; };
+		D71FCB0C1FF0EF6B006ADB6E /* locationaudioPath.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = locationaudioPath.pcm; sourceTree = "<group>"; };
+		D71FCB0E1FF0EF70006ADB6E /* remoteaudioPath.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = remoteaudioPath.pcm; sourceTree = "<group>"; };
 		D7A021E11FDE65010058F886 /* audio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audio.wav; sourceTree = "<group>"; };
 		D7A021E41FDE66AF0058F886 /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
 		D7FBD5321FDAA58B009721D3 /* AudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +101,10 @@
 				D71FCA201FE918E2006ADB6E /* remoteaudioPath.wav */,
 				D7A021E41FDE66AF0058F886 /* abc.mp4 */,
 				D7A021E11FDE65010058F886 /* audio.wav */,
+				D71FCB0E1FF0EF70006ADB6E /* remoteaudioPath.pcm */,
+				D71FCA221FE9223A006ADB6E /* vedioPath.mp4 */,
 				D7FBD55D1FDAAF6E009721D3 /* abc.aac */,
+				D71FCB0C1FF0EF6B006ADB6E /* locationaudioPath.pcm */,
 				D7FBD55E1FDAAF6E009721D3 /* abc.mp3 */,
 				D7FBD5541FDAA797009721D3 /* abc.pcm */,
 				D7FBD5531FDAA797009721D3 /* test.pcm */,
@@ -104,10 +113,10 @@
 				D7FBD5381FDAA58B009721D3 /* ViewController.h */,
 				D7FBD5391FDAA58B009721D3 /* ViewController.m */,
 				D7FBD54D1FDAA5D2009721D3 /* AudioMergePCmViewController.h */,
-				D7FBD5571FDAA7BD009721D3 /* LYPlayer.h */,
-				D7FBD5581FDAA7BD009721D3 /* LYPlayer.m */,
 				D7FBD54E1FDAA5D2009721D3 /* AudioMergePCmViewController.m */,
 				D7FBD54F1FDAA5D2009721D3 /* AudioMergePCmViewController.xib */,
+				D7FBD5571FDAA7BD009721D3 /* LYPlayer.h */,
+				D7FBD5581FDAA7BD009721D3 /* LYPlayer.m */,
 				D71FC7A01FE7967B006ADB6E /* RecordingCoordinator.h */,
 				D71FC7A11FE7967C006ADB6E /* RecordingCoordinator.m */,
 				D70DB4A11FE2361900C7C758 /* LEDReplayKitRecorder.h */,
@@ -187,11 +196,14 @@
 				D7FBD5551FDAA797009721D3 /* test.pcm in Resources */,
 				D71FCA211FE918E2006ADB6E /* remoteaudioPath.wav in Resources */,
 				D7A021E51FDE66AF0058F886 /* abc.mp4 in Resources */,
+				D71FCB0F1FF0EF70006ADB6E /* remoteaudioPath.pcm in Resources */,
 				D7FBD5601FDAAF6E009721D3 /* abc.mp3 in Resources */,
 				D7FBD5421FDAA58B009721D3 /* LaunchScreen.storyboard in Resources */,
 				D7A021E21FDE65010058F886 /* audio.wav in Resources */,
 				D7FBD5511FDAA5D2009721D3 /* AudioMergePCmViewController.xib in Resources */,
+				D71FCA231FE9223A006ADB6E /* vedioPath.mp4 in Resources */,
 				D7FBD5561FDAA797009721D3 /* abc.pcm in Resources */,
+				D71FCB0D1FF0EF6B006ADB6E /* locationaudioPath.pcm in Resources */,
 				D7FBD53F1FDAA58B009721D3 /* Assets.xcassets in Resources */,
 				D7FBD53D1FDAA58B009721D3 /* Main.storyboard in Resources */,
 			);

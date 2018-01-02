@@ -54,7 +54,7 @@
 
 -(NSURL*)getAbcFullPath
 {
-    return [[NSBundle mainBundle] URLForResource:@"remoteaudioPath" withExtension:@"wav"];
+    return [[NSBundle mainBundle] URLForResource:@"locationaudioPath" withExtension:@"pcm"];
 }
 -(NSURL*)getTestFullPath
 {
@@ -62,7 +62,7 @@
 }
 -(NSURL*)getMovieFullPath
 {
-    return[[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
+    return[[NSBundle mainBundle] URLForResource:@"vedioPath" withExtension:@"mp4"];
 }
 -(NSURL*)getWavComFullPath
 {
@@ -80,18 +80,21 @@
     }else if (sender.tag == 1){
         [self.player stop];
         
-         [self.player playWithURl:[self getTestFullPath]];
+         [self.player playWithURl:[self getAbcFullPath]];
     }else if (sender.tag == 2){
-//        [ExtAudioFileMixer sourceURLs:@[[self getAbcFullPath],[self getTestFullPath]] videoUrl:[self getMovieFullPath] composeToURL:[self getComFullPath] completed:^(NSError *error) {
-//
-//        }];
+        [ExtAudioFileMixer sourceURLs:@[[self getAbcFullPath]] videoUrl:[self getMovieFullPath] composeToURL:[self getComFullPath] completed:^(NSError *error) {
+
+        }];
 //       ExtAudioFileMixer*audioMix = [[ExtAudioFileMixer alloc] init];
 //        [audioMix convertPcm2Wav:[[self getAbcFullPath] path] dst_file:[[self getWavComFullPath] path] channels:1 sample_rate:44100];
-        if (!_kitRecorder) {
-            _kitRecorder = [LEDReplayKitRecorder alloc];
-        }
-          [_kitRecorder StartRecoderWithSize:self.view.bounds.size];
+        
+        
+//        if (!_kitRecorder) {
+//            _kitRecorder = [LEDReplayKitRecorder alloc];
+//        }
+//          [_kitRecorder StartRecoderWithSize:self.view.bounds.size];
 //        [self.coordinator startRecordingWithAudio:YES frontCameraPreview:NO];
+        
     }else if (sender.tag == 3){
 //         [self.player playWithURl:[self getComFullPath]];
         [_kitRecorder stopDecoderWithBlock:^(BOOL success) {
